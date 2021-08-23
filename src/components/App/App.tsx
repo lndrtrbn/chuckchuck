@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+
+import ChuckApi from '../../services/chucknorris-api';
+import Joke from '../../types/joke';
+import ChuckBtn from '../ChuckBtn/ChuckBtn';
+
 import './App.scss';
 
-function App() {
+export default function App() {
+  const [joke, setJoke] = useState<Joke>();
+
+  async function getJoke() {
+    const joke = await ChuckApi.getRandom();
+    setJoke(joke);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app">
+      <header className="header">
+        <h1>Chuck Chuck</h1>
       </header>
+
+      <ChuckBtn onClick={getJoke} />
+
+      <p className="joke">
+        {joke ? joke.value : "Dare punch my face!"}
+      </p>
     </div>
   );
 }
-
-export default App;

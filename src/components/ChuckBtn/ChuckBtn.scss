@@ -1,0 +1,27 @@
+.chuckbtn {
+  border: 0;
+  box-shadow: 10px 10px 5px 0px var(--black);
+  cursor: pointer;
+  height: 140px;
+  margin: 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0;
+  width: 190px;
+  will-change: transform;
+
+  &:not(:hover) {
+    animation: .8s infinite alternate bump;
+  }
+}
+
+@keyframes bump {
+  from {
+    box-shadow: 10px 10px 5px 0px var(--black);
+    transform: translateY(0px);
+  }
+  to {
+    box-shadow: 5px 5px 5px 0px var(--black);
+    transform: translateY(5px);
+  }
+}

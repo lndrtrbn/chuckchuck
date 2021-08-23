@@ -2,11 +2,13 @@
 @import "./fonts.scss";
 
 body {
-  margin: 0;
+  background-color: var(--dark);
+  color: var(--white);
   font-family: 'Ubuntu', 'Helvetica Neue', sans-serif;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
 }
 
 code {
