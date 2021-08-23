@@ -1,0 +1,14 @@
+@import "./variables.scss";
+@import "./fonts.scss";
+
+body {
+  margin: 0;
+  font-family: 'Ubuntu', 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Consolas, 'Courier New', monospace;
+}
